@@ -34,7 +34,7 @@ class FeedbackVideoAdmin(admin.ModelAdmin):
         return f'Видео отзыв - №{obj.id}'
 
     def video_tag(self, obj):
-        return format_html(f'<video width="100" src="{obj.video.url}" muted autoplay />')
+        return format_html(f'<video width="100" src="{obj.video.url}" muted autoplay loop />')
 
     video_tag.short_description = 'Видео'
     name.short_description = 'Название'

@@ -1,5 +1,6 @@
 from django.db import models
-
+from api.services.validators import validate_link
+from django.core.validators import URLValidator
 
 class FeedbackText(models.Model):
     content = models.TextField(
@@ -10,7 +11,9 @@ class FeedbackText(models.Model):
         verbose_name='Ссылка',
         help_text='Ссылка на комментарий',
         default='',
-        blank=True
+        blank=True,
+        # validators=[]
+        validators=[validate_link]
     )
     username = models.CharField(
         verbose_name='Имя',
