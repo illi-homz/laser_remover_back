@@ -9,9 +9,9 @@ class QuestionsType(DjangoObjectType):
 
 
 class Query(graphene.ObjectType):
-    all_Questions = graphene.List(QuestionsType)
+    all_questions = graphene.List(QuestionsType)
 
-    def resolve_all_Questions(root, info):
+    def resolve_all_questions(root, info):
         return models.Questions.objects.order_by('ordering')
 
 

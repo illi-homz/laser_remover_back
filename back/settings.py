@@ -15,7 +15,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = bool(int(env('IS_DEBUG')))
 
-ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['*', 'http://localhost:3000']
 
 
 INSTALLED_APPS = [
@@ -114,3 +114,14 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000'
+]
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1'
+]
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+]

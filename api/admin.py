@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import Illustration, FeedbackText, FeedbackVideo, Questions  # add this
+from . import models
 
 def dublicate_ad(modeladmin, request, queryset):
     # клонирование выбранных Ad
@@ -11,10 +11,11 @@ def dublicate_ad(modeladmin, request, queryset):
 
 dublicate_ad.short_description = "Дублировать объект"
 
-admin.site.register(FeedbackText)
-admin.site.register(Questions)
+admin.site.register(models.FeedbackText)
+admin.site.register(models.Questions)
+admin.site.register(models.Service)
 
-@admin.register(Illustration)
+@admin.register(models.Illustration)
 class IllustrationAdmin(admin.ModelAdmin):
     list_display = ('title', 'count', 'image_tag', 'id')
     list_editable = ['count']
@@ -25,7 +26,7 @@ class IllustrationAdmin(admin.ModelAdmin):
 
     image_tag.short_description = 'Изображение'
 
-@admin.register(FeedbackVideo)
+@admin.register(models.FeedbackVideo)
 class FeedbackVideoAdmin(admin.ModelAdmin):
     list_display = ('name', 'created', 'video_tag')
     actions = [dublicate_ad]
