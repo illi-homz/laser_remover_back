@@ -6,3 +6,4 @@ env/
 .vscode
 *.sqlite3
 media/**/*
+static/**/*
