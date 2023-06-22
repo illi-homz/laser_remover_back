@@ -3,7 +3,7 @@ import os
 import environ
 
 env = environ.Env(
-    DEBUG=(bool, False),
+    IS_DEBUG=(bool, False),
     SECRET_KEY=(str, '')
 )
 
@@ -13,7 +13,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = bool(int(env('IS_DEBUG')))
+IS_DEBUG = bool(int(env('IS_DEBUG')))
 
 # ALLOWED_HOSTS = ['*', 'http://localhost:3000']
 
@@ -69,13 +69,32 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'back.wsgi.application'
 
-
-DATABASES = {
+DB_DEV = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+DB_PROD = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dbms_db',
+        'USER': 'dbms',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
+
+DATABASES = DB_DEV if IS_DEBUG else DB_PROD
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 AUTH_PASSWORD_VALIDATORS = [
