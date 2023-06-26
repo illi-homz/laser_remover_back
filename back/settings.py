@@ -13,10 +13,7 @@ environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 SECRET_KEY = env('SECRET_KEY')
 
-IS_DEBUG = bool(int(env('IS_DEBUG')))
-
-# ALLOWED_HOSTS = ['*', 'http://localhost:3000']
-
+DEBUG = bool(int(env('IS_DEBUG')))
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -83,7 +80,7 @@ DB_PROD = {
     }
 }
 
-DATABASES = DB_DEV if IS_DEBUG else DB_PROD
+DATABASES = DB_DEV if DEBUG else DB_PROD
 
 # DATABASES = {
 #     'default': {

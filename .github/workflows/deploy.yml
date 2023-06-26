@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: fifsky/ssh-action@master
+        with:
+          command: |
+            cd ~/projects/tatu_by_laser_remover/back
+            git checkout .; git clean -fd; git pull
+            source env/bin/activate
+            rm -rf ~/grummers/static/*
+            ./manage.py collectstatic
+            ./manage.py makemigrations
+            ./manage.py migrate
+            killall gunicorn
+          host: ${{ secrets.HOST }}
+          user: ${{ secrets.USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
