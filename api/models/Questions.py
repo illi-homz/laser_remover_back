@@ -19,7 +19,7 @@ class Questions(models.Model):
     )
 
     def __str__(self):
-        return f'Вопрос и ответ - №{self.id}'
+        return f'{self.id} - {self.question}'
 
     class Meta:
         verbose_name = 'Вопросы и ответы'
