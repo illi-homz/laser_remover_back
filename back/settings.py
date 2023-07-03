@@ -131,23 +131,21 @@ CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
+    'http://localhost',
+    'http://127.0.0.1',
     'http://45.8.251.158',
     'https://mikhailkisiev.ru',
-    # 'http://192.168.2.38:3000',
 ]
+ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
     '45.8.251.158',
-    # '192.168.2.38',
     'mikhailkisiev.ru',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000',
-    'http://127.0.0.1:3000',
+    'http://localhost',
+    'http://127.0.0.1',
     'http://45.8.251.158',
     'https://mikhailkisiev.ru',
-    # 'http://192.168.2.38:3000',
 ]
