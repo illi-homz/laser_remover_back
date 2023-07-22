@@ -124,6 +124,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+DATA_UPLOAD_MAX_MEMORY_SIZE = 200*1024*1024
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -131,8 +132,8 @@ CSRF_COOKIE_SECURE = True
 CSRF_USE_SESSIONS = True
 
 CSRF_TRUSTED_ORIGINS = [
-    'http://localhost',
-    'http://127.0.0.1',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
     'http://45.8.251.158',
     'https://mikhailkisiev.ru',
 ]
@@ -144,8 +145,9 @@ ALLOWED_HOSTS = [
     'mikhailkisiev.ru',
 ]
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost',
-    'http://127.0.0.1',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
     'http://45.8.251.158',
     'https://mikhailkisiev.ru',
 ]
+
