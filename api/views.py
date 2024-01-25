@@ -27,13 +27,14 @@ def create_telegram_msg(msg):
 
 def create_services_msg(data):
     messegers = data['messegers']
-    contacts = '' if not len(messegers) else ', ' + ', '.join(messegers)
+    contacts = '' if not len(messegers) else ', '.join(messegers)
     
     msg = '*Сообщение с сайта*\n\n'
     msg += f'#Клиент: {data["name"]} {data["lastname"]}\n'
     msg += f'#Тел: {data["phone"]}\n'
     msg += f'#Услуга: {data["service"]}\n'
-    msg += f'#Контакты: телефон' + contacts
+    # msg += f'#Контакты: телефон' + contacts
+    msg += f'#Контакты: ' + contacts
 
     return msg
 
