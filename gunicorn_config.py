@@ -1,5 +1,5 @@
 command = '/home/www/projects/tatu_by_laser_remover/env/bin/gunicorn'
-pythonpath = '/home/www/projects/tatu_by_laser_remover'
+pythonpath = '/home/www/projects/tatu_by_laser_remover/back'
 bind = 'localhost:8000'
 workers = 3
 user = 'www'
