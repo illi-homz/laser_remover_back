@@ -1,5 +1,5 @@
 command = '/home/www/projects/laser_remover_back/env/bin/gunicorn'
-pythonpath = '/home/www/projects/laser_remover_back/back'
+pythonpath = '/home/www/projects/laser_remover_back'
 bind = 'localhost:8000'
 workers = 3
 user = 'www'
