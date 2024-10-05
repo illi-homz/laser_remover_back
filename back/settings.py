@@ -134,20 +134,20 @@ CSRF_USE_SESSIONS = True
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'http://45.8.251.158',
+    'http://188.68.223.94',
     'https://mikhailkisiev.ru',
 ]
 ALLOWED_HOSTS = ['*']
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    '45.8.251.158',
+    '188.68.223.94',
     'mikhailkisiev.ru',
 ]
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
-    'http://45.8.251.158',
+    'http://188.68.223.94',
     'https://mikhailkisiev.ru',
 ]
 
